@@ -5,8 +5,8 @@
 angular.module("NegarKhanehPanel").factory("HttpHelper", [function () {
     //var mainAddress = "http://godfather.abrstudio.ir";
     //var mainAddress = "http://test.abrstudio.ir";
-    var mainAddress = "http://127.0.0.1:8080";
-    //var mainAddress = "";
+    //var mainAddress = "http://127.0.0.1:8080";
+    var mainAddress = "";
     var mainAdminAdress = mainAddress + "/admin";
     var mainApiAddress = mainAddress + "/api";
     return {
