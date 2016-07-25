@@ -1,0 +1,44 @@
+<div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+    <div class="col-xs-12">
+        <alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <rd-widget>
+            <rd-widget-header icon="fa-users" title="Upload New Image">
+            </rd-widget-header>
+            <rd-widget-body classes="no-padding" style="height: auto">
+                <form method="post" enctype="multipart/form-data" class="form-horizontal" style="padding-top: 50px; padding-bottom: 50px; padding-right: 50px" ng-submit="upload()">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="name" id="name" ng-model="form.name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="col-sm-2 control-label">Image</label>
+                        <div class="col-sm-10">
+                            <input accept="image/*" type="file" name="image" class="form-control" id="image" fileread="form.image" placeholder="image">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="form.released" ng-true-value="true" ng-false-value="false"> Released
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Upload</button>
+                        </div>
+                    </div>
+                </form>
+            </rd-widget-body>
+            </rd-widget>
+    </div>
+</div>

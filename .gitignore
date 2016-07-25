@@ -1,0 +1,28 @@
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio Windows image file caches
+Thumbs.db ehthumbs.db *.iml
+# Folder config file
+## Directory-based project format:Desktop.ini
+.idea/ 
+# if you remove the above rule, at least ignore the following:.editorconfig Recycle Bin used on file shares User-specific stuff:$RECYCLE.BIN/
+ .idea/workspace.xml
+ .idea/tasks.xml# Windows Installer files *.cab *.msi *.msm *.msp
+ .idea/dictionaries
+# ========================= Operating System Files =========================
+ Sensitive or high-churn files:
+ .idea/dataSources.ids# OSX
+ .idea/dataSources.xml# =========================
+ .idea/sqlDataSources.xml .DS_Store .AppleDouble .LSOverride
+ .idea/dynamic.xml
+ .idea/uiDesigner.xml# Icon must ends with two \r. Icon
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100 .Trashes
+# Dist Directory
+/dist
+# Node modules
+/node_modules
+# Bower components
+/src/components
+.DS_Store
+

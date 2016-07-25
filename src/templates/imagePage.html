@@ -1,0 +1,56 @@
+<div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+    <div class="col-xs-12">
+        <alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+</div>
+
+<script type="text/ng-template" id="release.html">
+    <p>Are you sure?</p>
+    <div class="ngdialog-buttons">
+        <div class="clearfix"></div>
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeDialog()">No</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="release(!image.image.released)">Yes</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="rename.html">
+    <p>Enter New Name:</p>
+    <div class="form-group">
+        <label for="name">New Name:</label>
+        <textarea class="form-control" id="name" placeholder="name" ng-model="name"></textarea>
+    </div>
+    <div class="ngdialog-buttons">
+        <div class="clearfix"></div>
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeDialog()">Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="rename(name)">Send</button>
+    </div>
+</script>
+<div class="row">
+    <div class="col-lg-12">
+        <rd-widget>
+            <rd-widget-header icon="fa-users" title="Image Page">
+                <button class="btn btn-sm btn-info pull-right" ng-click="get()"><i class="fa fa-refresh"></i>
+                    Refresh
+                </button>
+                <button ng-if="!image.image.released" class="btn btn-sm btn-success pull-right" style="margin-right: 10px;" ng-click="openReleaseDialog()"><i class="fa fa-refresh"></i>
+                    Release
+                </button>
+                <button ng-if="image.image.released" class="btn btn-sm btn-danger pull-right" style="margin-right: 10px;" ng-click="openReleaseDialog()"><i class="fa fa-refresh"></i>
+                    UnRelease
+                </button>
+            </rd-widget-header>
+            <rd-widget-body classes="no-padding" style="height: auto">
+                <table class="table">
+                    <tbody>
+                    <tr><td>Id</td><td>{{image.image._id}}</td></tr>
+                    <tr><td>Name</td><td><a href="" ng-click="openRenameDialog()">{{image.image.name}}</a></td></tr>
+                    <tr><td>likeCount</td><td>{{image.image.likeCount}}</td></tr>
+                    <tr><td>released</td><td>{{image.image.released}}</td></tr>
+                    <tr><td>creationData</td><td>{{image.image.creationDate}}</td></tr>
+                    <tr><td>Image</td><td><img ng-src="{{getImagePath(image.image.path)}}" width="90%"></td></tr>
+                    </tbody>
+                </table>
+            </rd-widget-body>
+            </rd-widget>
+    </div>
+</div>
