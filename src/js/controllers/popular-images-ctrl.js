@@ -3,13 +3,13 @@
  */
 
 angular.module('NegarKhanehPanel')
-    .controller('NewImagesCtrl', ['$scope', "$http", "HttpHelper", "$interval", "RouteHelper", NewImagesCtrl]);
+    .controller('PopularImagesCtrl', ['$scope', "$http", "HttpHelper", "$interval", "RouteHelper", PopularImagesCtrl]);
 
 /**
  * @return {string}
  */
-function NewImagesCtrl($scope, $http, HttpHelper, RouteHelper) {
-    $scope.title = "New Images";
+function PopularImagesCtrl($scope, $http, HttpHelper, $interval, RouteHelper) {
+    $scope.title = "Popular Images";
     $scope.images = [];
     $scope.pageSize = 20;
     $scope.currentPage = 0;
@@ -34,7 +34,7 @@ function NewImagesCtrl($scope, $http, HttpHelper, RouteHelper) {
         $scope.scrollFunction();
     };
     $scope.update = function () {
-        $http.get(HttpHelper.newImageList($scope.offset(), $scope.pageSize)).success(function (data, status) {
+        $http.get(HttpHelper.popularImageList($scope.offset(), $scope.pageSize)).success(function (data, status) {
             if(data == null || data.length == 0){
                 $scope.isDone = true;
             }

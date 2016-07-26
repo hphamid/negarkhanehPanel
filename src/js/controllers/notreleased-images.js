@@ -8,7 +8,7 @@ angular.module('NegarKhanehPanel')
 /**
  * @return {string}
  */
-function NotReleasedImagesCtrl($scope, $http, HttpHelper, RouteHelper) {
+function NotReleasedImagesCtrl($scope, $http, HttpHelper, $interval, RouteHelper) {
     $scope.title = "Not Released Images";
     $scope.images = [];
     $scope.pageSize = 20;
