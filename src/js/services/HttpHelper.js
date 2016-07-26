@@ -3,10 +3,8 @@
  */
 
 angular.module("NegarKhanehPanel").factory("HttpHelper", [function () {
-    //var mainAddress = "http://godfather.abrstudio.ir";
-    //var mainAddress = "http://test.abrstudio.ir";
-    //var mainAddress = "http://127.0.0.1:8080";
-    var mainAddress = "";
+    var mainAddress = "http://test.abrstudio.ir:8887";
+    //var mainAddress = "";
     var mainAdminAdress = mainAddress + "/admin";
     var mainApiAddress = mainAddress + "/api";
     return {
@@ -19,7 +17,7 @@ angular.module("NegarKhanehPanel").factory("HttpHelper", [function () {
             return mainApiAddress + "/new/" + start + "/" + count;
         },
         popularImageList: function(start, count){
-            return mainApiAddress + "/new/" + start + "/" + count;
+            return mainApiAddress + "/popular/" + start + "/" + count;
         },
         notReleasedImageList: function(start, count){
             return mainAdminAdress + "/notReleased/" + start + "/" + count;
