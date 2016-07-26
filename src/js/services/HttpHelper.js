@@ -3,7 +3,7 @@
  */
 
 angular.module("NegarKhanehPanel").factory("HttpHelper", [function () {
-    var mainAddress = "http://test.abrstudio.ir:8887";
+    //var mainAddress = "http://test.abrstudio.ir:8887";
     //var mainAddress = "";
     var mainAdminAdress = mainAddress + "/admin";
     var mainApiAddress = mainAddress + "/api";
